@@ -111,12 +111,12 @@
 
     async function stepN(count) {
       for (var i = 0; i < count; i++) {
-        await step();
+         await step();
       }
     }
 
     function wallAhead() {
-      return cellAhead() == 5;
+      return cellAhead() === 5;
     }
 
     async function moveWhileWallRight() {
@@ -127,6 +127,16 @@
         turnLeft();
       }
     }
+    async function moveWhileInHouse() {
+      while (cellAhead() !== 0) {
+        var a = cellAhead();
+        if (a === 3 || a === 6) {
+          await step();
+        } else if (a === 5) {
+          turnLeft();
+        }
+      }
+    }
 
     async function main() {
       await stepN(5);
@@ -135,9 +145,11 @@
         await step();
       }
       turnLeft();
-      while (cellAhead() != 6) {
+      while (cellAhead() !== 6) {
         await moveWhileWallRight();
       }
+      moveWhileInHouse();
+    
     }
 
     let level = [
@@ -251,7 +263,13 @@
           break;
         case 2:
           if (score > 0) {
-            changeMapAt(x, y, 4);
+            var x1 = x;
+            var y1 = y;
+            setTimeout(function () {
+              console.log("test");
+              changeMapAt(x1, y1, 2);
+            }, 5000);
+            changeMapAt(x1, y1, 4);
             changeScore(-50);
           }
           break;
