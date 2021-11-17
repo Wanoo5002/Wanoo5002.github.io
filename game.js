@@ -88,7 +88,6 @@ function dropBox() {
   player.classList.remove('has-box');
 }
 
-
 function changeScore(diff) {
   score += diff;
   if (score < 0) {
