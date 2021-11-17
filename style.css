@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+}
+
+#field {
+  position: relative;
+  width: 1200px;
+  height: 570px;
+  background: #1c7d26;
+}
+
+.cell {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border: 1px solid black;
+}
+
+.cell-0 {
+  background: #1c7d26;
+}
+
+.cell-1 {
+  background: #090;
+}
+
+.cell-2 {
+  background: #1c7d26;
+}
+
+.cell-3 {
+  background: #d05919;
+}
+
+.cell-4 {
+  background: red;
+}
+
+.cell-5 {
+  background: #9c5329;
+}
+
+.cell-6 {
+  background: #d58a5f;
+}
+
+.cell-7 {
+  background: black;
+}
+
+.cell-8 {
+  background: black;
+}
+
+.cell-9 {
+  background: gold;
+}
+
+#player {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  background-image: url("Goblin.gif");
+  background-size: cover;
+  z-index: 100;
+}
+
+#score {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#player.has-box {
+  background-image: url("GoblinHasBox.gif");
+}
